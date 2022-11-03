@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  db:
+    image: 'postgres:9.6-alpine'
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+      - ./agendamento/initdb.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_USER=mata76
+      - POSTGRES_PASSWORD=mata76
+      - POSTGRES_DB=mata76-agendamento
+
+volumes:
+  postgres_data:
+    driver: local
