@@ -18,6 +18,16 @@
 docker-compose -f docker-compose-livraria.yml up
 ```
 
+### Parar e remover volumes:
+```
+docker-compose -f docker-compose-livraria.yml down --volumes
+```
+
+### Acessar o shell
+```
+docker exec -it c55d3ea04efd psql -U mata76 -d mata76-livraria
+```
+
 ### Tabelas:
 - books
   - id: text PK NOT_NULL
